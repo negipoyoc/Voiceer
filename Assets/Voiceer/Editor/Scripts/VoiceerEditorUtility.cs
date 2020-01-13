@@ -125,6 +125,8 @@ namespace Voiceer
         {
             switch (trigger)
             {
+                case Hook.OnCompileBegin:
+                    return "コンパイルが開始した時";
                 case Hook.OnCompileEnd:
                     return "コンパイルが終了した時";
                 case Hook.OnEnteredPlayMode:

@@ -4,7 +4,6 @@ using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Voiceer
 {
@@ -55,6 +54,26 @@ namespace Voiceer
 
             ///シーンを保存する時
             EditorSceneManager.sceneSaved += (scene) => { SoundPlayer.PlaySound(Hook.OnSave); };
+        }
+
+        /// <summary>
+        /// コンパイル開始時
+        /// </summary>
+        [InitializeOnLoad]
+        public class CompileBeginHook
+        {
+            static bool isPlayed = false;
+            static CompileBeginHook()
+            {
+                EditorApplication.update += () =>
+                {
+                    if (!EditorApplication.isCompiling || isPlayed)
+                        return;
+                    isPlayed = true;
+
+                    EditorApplication.delayCall += () => { SoundPlayer.PlaySound(Hook.OnCompileBegin); };
+                };
+            }
         }
 
         /// <summary>

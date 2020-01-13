@@ -7,6 +7,7 @@ namespace Voiceer
 {
     public enum Hook
     {
+        OnCompileBegin = -1,
         OnCompileEnd = 0,
         OnEnteredPlayMode,
         OnExitingPlayMode,
