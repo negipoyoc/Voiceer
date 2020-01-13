@@ -28,6 +28,20 @@ namespace Voiceer
 　
             var unityEditorAssembly = typeof(AudioImporter).Assembly;
             var audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
+            
+#if UNITY_2019_2_OR_NEWER
+            
+            var method = audioUtilClass.GetMethod
+            (
+                "PlayClip",
+                BindingFlags.Static | BindingFlags.Public,
+                null,
+                new Type[] {typeof(AudioClip), typeof(int), typeof(bool)},
+                null
+            );
+
+            method.Invoke(null, new object[] {clip, 0, false});
+#else
             var method = audioUtilClass.GetMethod
             (
                 "PlayClip",
@@ -38,6 +52,10 @@ namespace Voiceer
             );
 
             method.Invoke(null, new object[] {clip});
+#endif
+            
+            
+            
         }
     }
 }
