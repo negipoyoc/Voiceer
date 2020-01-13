@@ -2,8 +2,6 @@
 # Voiceer
 Voice+Cheer=Voiceer(ぼいしあ)
 
-かわいい声でコーディングを応援してくれるUnity拡張です。
-
 Unityで
 * セーブしたとき
 * 再生したとき
