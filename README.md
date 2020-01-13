@@ -47,9 +47,11 @@ Window->Voiceer->Voice Preset Generatorを選択します。
 1. 新規作成を押します。
 
 2. 画面が開きます。
+
 ![New](https://user-images.githubusercontent.com/31283418/72231860-08479e80-3601-11ea-84d3-d92deb58e24e.png)
 
 3. [+][-]ボタンで、任意のフックでボイスを追加したり消したりします。
+
 ![](https://user-images.githubusercontent.com/31283418/72231986-bd7a5680-3601-11ea-8f46-fec58664c17f.png)
 
 4. 終わりです。(自動セーブされているので注意)
