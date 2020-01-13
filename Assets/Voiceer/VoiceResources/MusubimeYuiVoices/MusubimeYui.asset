@@ -19,7 +19,6 @@ MonoBehaviour:
       - {fileID: 8300000, guid: 3f9f3222ceba6df41888739ad936344d, type: 3}
       - {fileID: 8300000, guid: 59f123fa6b293724db0e9a52d5915258, type: 3}
       - {fileID: 8300000, guid: e26faa569f044f84288c8939d8d4148d, type: 3}
-      - {fileID: 8300000, guid: 44bbbc2603dd44041ad1ff9d934d8d16, type: 3}
   - trigger: 1
     sound:
       voiceClips:
@@ -52,6 +51,10 @@ MonoBehaviour:
     sound:
       voiceClips:
       - {fileID: 8300000, guid: 3c9036e50857a0841b8d7e5559eea263, type: 3}
+  - trigger: -1
+    sound:
+      voiceClips:
+      - {fileID: 8300000, guid: 44bbbc2603dd44041ad1ff9d934d8d16, type: 3}
   metaData:
     memo: "\u7D50\u76EE\u30E6\u30A4\u3061\u3083\u3093\u306EFanbox\u9650\u5B9A\u30D5\u30EB\u30DC\u30A4\u30B9\u306A\u30DC\u30A4\u30B9Preset\u3067\u3059\u3002"
     url: https://twitter.com/musubimeyui
