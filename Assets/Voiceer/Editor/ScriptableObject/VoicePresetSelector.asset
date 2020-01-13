@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5faef4f928896e48b3512ed6dd181c3, type: 3}
   m_Name: VoicePresetSelector
   m_EditorClassIdentifier: 
-  CurrentVoicePreset: {fileID: 0}
+  CurrentVoicePreset: {fileID: 11400000, guid: a794767d3d824b64bafbbd20a7703076, type: 2}

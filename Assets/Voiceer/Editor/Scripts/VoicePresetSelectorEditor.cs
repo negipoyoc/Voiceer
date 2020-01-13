@@ -26,10 +26,18 @@ namespace Voiceer
             { 
                 _selector = VoiceerEditorUtility.GetStorageSelector();
             }
-
-            _selector.CurrentVoicePreset = EditorGUILayout.ObjectField("現在のボイスPreset:",
-                _selector.CurrentVoicePreset, typeof(VoicePreset), false) as VoicePreset;
-            
+            EditorGUI.BeginChangeCheck();
+            {
+                _selector.CurrentVoicePreset = EditorGUILayout.ObjectField("現在のボイスPreset:",
+                    _selector.CurrentVoicePreset, typeof(VoicePreset), false) as VoicePreset;
+            }
+            if (EditorGUI.EndChangeCheck())
+            {
+                EditorUtility.SetDirty(_selector);
+                AssetDatabase.SaveAssets();
+                // エディタを最新の状態にする
+                AssetDatabase.Refresh();
+            }
             VoiceerEditorUtility.Hr(position.width);
             
             if (_selector.CurrentVoicePreset == null)
