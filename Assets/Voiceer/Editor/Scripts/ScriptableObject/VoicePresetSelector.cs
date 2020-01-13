@@ -2,7 +2,8 @@
 
 namespace Voiceer
 {
-    public class StorageSelector : ScriptableObject
+    [CreateAssetMenu]
+    public class VoicePresetSelector : ScriptableObject
     {
         public VoicePreset CurrentVoicePreset;
     }

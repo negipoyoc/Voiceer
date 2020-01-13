@@ -5,15 +5,15 @@ using UnityEngine;
 
 namespace Voiceer
 {
-    public enum Trigger
+    public enum Hook
     {
         OnCompileEnd = 0,
         OnEnteredPlayMode,
         OnExitingPlayMode,
         OnPlayButHasError,
         OnPreProcessBuild,
-        OnPostProcessBuild_Success,
-        OnPostProcessBuild_Failed,
+        OnPostProcessBuildSuccess,
+        OnPostProcessBuildFailed,
         OnSave,
         OnBuildTargetChanged,
     }
@@ -39,10 +39,10 @@ namespace Voiceer
         [Serializable]
         public class Set
         {
-            public Trigger trigger;
+            public Hook trigger;
             public Sound sound;
 
-            public Set(Trigger t, Sound s)
+            public Set(Hook t, Sound s)
             {
                 trigger = t;
                 sound = s;
@@ -59,13 +59,13 @@ namespace Voiceer
         public List<Set> voiceSetList = new List<Set>();
         public Meta metaData = new Meta();
 
-        public AudioClip GetRandomClip(Trigger trigger)
+        public AudioClip GetRandomClip(Hook trigger)
         {
             var sound = GetVoiceSet(trigger);
             return sound?.GetRandom();
         }
 
-        public int ClipCount(Trigger trigger)
+        public int ClipCount(Hook trigger)
         {
             var sound = GetInstanceSafety((int)trigger);
             if (sound == null || sound.voiceClips.Count == 0)
@@ -75,7 +75,7 @@ namespace Voiceer
             return sound.voiceClips.Count;
         }
 
-        public Sound GetVoiceSet(Trigger trigger)
+        public Sound GetVoiceSet(Hook trigger)
         {
             foreach (var set in voiceSetList)
             {
@@ -87,17 +87,16 @@ namespace Voiceer
             return null;
         }
 
-        public Sound GetInstanceSafety(int index)
+        private Sound GetInstanceSafety(int index)
         {
             return voiceSetList[index].sound;
         }
 
         public void CopyFrom(VoicePreset p)
         {
-
             this.voiceSetList = new List<Set>();
 
-            foreach (Trigger trigger in Enum.GetValues(typeof(Trigger)))
+            foreach (Hook trigger in Enum.GetValues(typeof(Hook)))
             {
                 if (GetVoiceSet(trigger) == null)
                 {
