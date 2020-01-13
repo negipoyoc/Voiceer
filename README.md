@@ -23,36 +23,41 @@ Unity2018.4.5または4.15で動作チェックしています。
 (※Unity2019や2020ではEditor側のAPIが変更されている可能性があるため動作未確認です。)
 
 ## 使い方
-1. Releaseより、Voiceer+Sample.unitypackageをダウンロードします。
+1. [Release](https://github.com/negipoyoc/Voiceer/releases)より、Voiceer+Sample.unitypackageをダウンロードします。
 2. プロジェクトにインポートします。
 3. 終わりです。これでボイスが再生されます。
 
-
 ### 違うボイスPresetを試したい時
 1.Window->Voiceer->Voice Preset Selectorを選択します。
+![](https://user-images.githubusercontent.com/31283418/72231862-08e03500-3601-11ea-9a1b-f9eadd6d99a7.png)
 
 2.赤丸の部分をクリックし、Presetを選択します。
+![](https://user-images.githubusercontent.com/31283418/72231936-7ee49c00-3601-11ea-9c0b-b7da798ce87d.png)
 
 3.終わりです。
 
 ### ボイスの種類を自分で編集したい時
 Window->Voiceer->Voice Preset Generatorを選択します。
+![](https://user-images.githubusercontent.com/31283418/72231861-08479e80-3601-11ea-80f7-62ec8d60b182.png)
 
 ここでは、既存のファイルをロード、または、新規作成を選べます。
+![](https://user-images.githubusercontent.com/31283418/72231859-08479e80-3601-11ea-916c-b9ea6f917a88.png)
 
 #### 新規作成
 1. 新規作成を押します。
 
 2. 画面が開きます。
+![New](https://user-images.githubusercontent.com/31283418/72231860-08479e80-3601-11ea-84d3-d92deb58e24e.png)
 
 3. [+][-]ボタンで、任意のフックでボイスを追加したり消したりします。
+![](https://user-images.githubusercontent.com/31283418/72231986-bd7a5680-3601-11ea-8f46-fec58664c17f.png)
 
 4. 終わりです。(自動セーブされているので注意)
 
 #### 既存ファイルのロード
 1. 一番上行の○をクリックして選択します。
 
-2. [+][-]ボタンで、任意のフックでボイスを追加したり消したりします。
+2. 新規作成のとき同様、[+][-]ボタンで、任意のフックでボイスを追加したり消したりします。
 
 3. 終わりです。(自動セーブされているので注意)
 
