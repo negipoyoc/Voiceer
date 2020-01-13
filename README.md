@@ -4,11 +4,7 @@ Voice+Cheer=Voiceer(ぼいしあ)
 
 かわいい声でコーディングを応援してくれるUnity拡張です。
 
-開発協力：[結目ユイ様](https://twitter.com/musubimeyui)
-
-## これは何？
 Unityで
-
 * セーブしたとき
 * 再生したとき
 * 再生を終了した時
@@ -18,10 +14,7 @@ Unityで
 デモ動画：
 https://twitter.com/CST_negi/status/1214500926326628352
 
-## 動作環境
-Unity2018.4.5または4.15で動作チェックしています。
-
-(※Unity2019や2020ではEditor側のAPIが変更されている可能性があるため動作未確認です。)
+開発協力：[結目ユイ様](https://twitter.com/musubimeyui)
 
 ## 使い方
 1. [Release](https://github.com/negipoyoc/Voiceer/releases)より、Voiceer+Sample.unitypackageをダウンロードします。
@@ -77,3 +70,8 @@ Presetの選択モードに戻ります。(編集画面が初期化されます�
 ## ボイスファイルについて
 * ボイスはAssets/Voiceer/VoiceResources/{プリセット名}以下に置いておくと、みんなが幸せになれます。
 * wavファイルを推奨しています。
+
+# 動作環境
+Unity2018.4.5または4.15で動作チェックしています。
+
+(※Unity2019や2020ではEditor側のAPIが変更されている可能性があるため動作未確認です。)
