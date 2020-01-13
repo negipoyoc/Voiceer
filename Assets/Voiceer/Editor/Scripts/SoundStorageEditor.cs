@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -46,8 +47,17 @@ namespace Voiceer
             {
                 EditorGUI.BeginChangeCheck();
                 {
-                    foreach (Hook trigger in Enum.GetValues(typeof(Hook)))
+                    // 負の値を考慮してEnum型を昇順に列挙するための処理
+                    // note: Enum.GetValues(Type)は列挙定数のバイナリ値(符号なしの大きさ)によって並べ替えらるため不適
+                    // https://docs.microsoft.com/ja-jp/dotnet/api/system.enum.getvalues?view=netframework-4.8
+                    var min = Enum.GetValues(typeof(Hook)).Cast<int>().Min();
+                    var max = Enum.GetValues(typeof(Hook)).Cast<int>().Max();
+                    for (var index = min; index < max; ++index)
                     {
+                        if (!Enum.IsDefined(typeof(Hook), index))
+                            continue;
+                        var trigger = (Hook)index;
+
                         if (_loadedPreset.GetVoiceSet(trigger) == null)
                         {
                             _loadedPreset.voiceSetList.Add(new VoicePreset.Set(trigger, new Sound()));
