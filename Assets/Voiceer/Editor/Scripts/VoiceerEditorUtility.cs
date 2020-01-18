@@ -143,6 +143,14 @@ namespace Voiceer
                     return "プロジェクトをセーブした時";
                 case Hook.OnBuildTargetChanged:
                     return "ビルドターゲットを変更した時";
+                case Hook.OnTestRunStarted:
+                    return "ユニットテストを実行開始した時（Unity 2019.2以降で有効）";
+                case Hook.OnTestRunSuccessfully:
+                    return "ユニットテストが成功した時（Unity 2019.2以降で有効）";
+                case Hook.OnTestRunFailed:
+                    return "ユニットテストが失敗した時（Unity 2019.2以降で有効）";
+                case Hook.OnTestError:
+                    return "ユニットテスト実行時エラーがあった時（Unity 2019.2以降で有効）";
                 default:
                     //上記で未定義なTriggerはそのまま出力
                     return trigger.ToString();
