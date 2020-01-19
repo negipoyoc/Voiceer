@@ -29,10 +29,6 @@ on:
 jobs:
   Create:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        unity-version: 
-        - 2018.4.15f1
     steps:
     - uses: actions/checkout@v2
     - run: |
