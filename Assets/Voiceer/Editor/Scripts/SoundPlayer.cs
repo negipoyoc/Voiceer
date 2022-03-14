@@ -31,7 +31,11 @@ namespace Voiceer
             
             var method = audioUtilClass.GetMethod
             (
+#if UNITY_2020_1_OR_NEWER
+                "PlayPreviewClip",
+#else
                 "PlayClip",
+#endif
                 BindingFlags.Static | BindingFlags.Public,
                 null,
 #if UNITY_2019_2_OR_NEWER
